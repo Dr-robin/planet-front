@@ -7,7 +7,7 @@
   "scripts": {
     "less": "./node_modules/.bin/lessc --clean-css less/main.less public/style.css",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules;yarn run less"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
