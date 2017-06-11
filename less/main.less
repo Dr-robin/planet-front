@@ -1,0 +1,68 @@
+@import (inline)'../theme/spoqa.css';
+@import (inline)'../theme/bootstrap.css';
+@import (inline)'../theme/font-awesome.css';
+
+body {
+  margin-top: 50px;
+  @media(min-width: 768px) {
+    margin-top: 80px;
+  }
+}
+.navbar {
+  background: #673AB7 url('../public/image/planet-logo.svg') no-repeat center;
+  background-size: 40px;
+  .navbar-nav a {
+    color: #fff !important;
+    font-size: 20px;
+    padding: 15px;
+  }
+}
+#bar-menu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 50px;
+  background-color: #fff;
+  border-bottom: 1px solid #cccccc;
+  @media(min-width: 768px) {
+    height: 30px;
+  }
+  @media(max-width: 767px) {
+    display: none;
+  }
+  &.active {
+    display: block;
+  }
+  ul {
+    padding-left: 0;
+    margin-top: 0;
+  }
+  li {
+    list-style: none;
+    margin-right: 15px;
+    @media(min-width: 768px) {
+      float: left;
+      i {
+        display: none;
+      }
+    }
+    a {
+      padding: 10px 0;
+      display: block;
+      color: #333;
+      @media(min-width: 768px) {
+        padding: 5px 8px;
+      }
+      @media(max-width: 767px) {
+        span {
+          position: absolute;
+          left: 40px;
+        }
+      }
+      i {
+        width: 20px;
+        text-align: center;
+      }
+    }
+  }
+}
