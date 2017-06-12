@@ -8,7 +8,8 @@ require('./load-component');
 
 const router = new VueRouter({
 	routes: [
-		{path: '/', component: main}
+		{path: '/', component: main},
+		{path: '/home', component: main}
 	],
 	mode: 'history'
 });
