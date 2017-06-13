@@ -1,0 +1,11 @@
+planet.moe {
+	root /root/planet-front
+	redir 301 {
+		if {path} is /
+		/ /home
+	}
+	rewrite / {
+		if {path} not_has /public
+		to /public/index.html
+	}
+}
