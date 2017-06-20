@@ -1,5 +1,5 @@
 planet.moe {
-	root ./planet-front
+    root .
 	redir 301 {
 		if {path} is /
 		/ /home
