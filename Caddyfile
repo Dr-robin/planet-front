@@ -9,3 +9,8 @@ planet.moe {
 		to /public/index.html
 	}
 }
+api.planet.moe {
+    proxy / localhost:6014 {
+        transparent
+    }
+}
