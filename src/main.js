@@ -15,5 +15,3 @@ const router = new VueRouter({
 });
 
 let vm = new Vue({router}).$mount('#vue-root');
-
-console.log(main);
