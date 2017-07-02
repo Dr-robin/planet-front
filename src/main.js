@@ -17,3 +17,5 @@ const router = new VueRouter({
 });
 
 let vm = new Vue({router}).$mount('#vue-root');
+
+export default router;
