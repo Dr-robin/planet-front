@@ -4,7 +4,7 @@ export default {
 	data: {data: {}, isLogin: false},
 	login(email, password) {
 		return new Promise((success, fail) => {
-			$.post('/public/test/login.json', {email, password})
+			$.post('https://api.planet.moe/login', {email, password})
 				.done((data) => {
 					this.getUserData(data.sessID).then(success, fail);
 				})
