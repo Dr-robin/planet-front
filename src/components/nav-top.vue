@@ -4,7 +4,7 @@
 			<ul class="nav navbar-nav navbar-left">
 				<li class="visible-xs-block"><a @click="isMenuOpen = !isMenuOpen"><i class="fa fa-bars"></i></a></li>
 			</ul>
-			<ul class="nav navbar-nav navbar-right">
+			<ul class="nav navbar-nav navbar-right" v-if="user.isLogin">
 				<li><a href="#"><i class="fa fa-bell-o"></i></a></li>
 			</ul>
 		</nav>
