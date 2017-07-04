@@ -9,7 +9,7 @@
     "minify": "./node_modules/.bin/uglifyjs public/main.js -cm -o public/main.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "make": "yarn run build;yarn run minify;yarn run less"
+    "update": "git pull;yarn run build;yarn run minify;yarn run less;node update-complete.js"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "jquery": "^3.2.1",
+    "request": "^2.81.0",
     "vue": "^2.3.4",
     "vue-router": "^2.5.3"
   }
