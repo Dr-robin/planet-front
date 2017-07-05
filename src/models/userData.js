@@ -14,14 +14,19 @@ export default {
 	getUserData(sessID) {
 		return new Promise((success, fail) => {
 			$.get({url: 'https://api.planet.moe/user/me', headers: {Authorization: sessID}})
-				.done((data) => {
-					localStorage.setItem('session', sessID);
-					$.ajaxSetup({headers: {Authorization: sessID}});
-					this.data.data = data.profile;
-					this.data.isLogin = true;
-					success();
-				})
-				.fail(() => { fail(); });
+			.done((data) => {
+				localStorage.setItem('session', sessID);
+				$.ajaxSetup({headers: {Authorization: sessID}});
+				this.data.data = data.profile;
+				this.data.isLogin = true;
+				success();
+			})
+			.fail((xhr) => {
+				if(xhr.status === 401) {
+					localStorage.removeItem('session');
+				}
+				fail();
+			});
 		});
 	}
 };
