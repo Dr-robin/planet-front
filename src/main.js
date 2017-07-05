@@ -4,6 +4,8 @@ import VueRouter from 'vue-router';
 import main from './route/main.vue';
 import login from './route/login.vue';
 
+import user from './models/userData';
+
 Vue.use(VueRouter);
 require('./load-component');
 
@@ -15,6 +17,10 @@ const router = new VueRouter({
 	],
 	mode: 'history'
 });
+
+if(localStorage.getItem('session')) {
+	user.getUserData(localStorage.getItem('session'));
+}
 
 let vm = new Vue({router}).$mount('#vue-root');
 
