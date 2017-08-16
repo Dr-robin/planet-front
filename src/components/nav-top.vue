@@ -16,7 +16,7 @@
 					<li><a href="#"><i class="fa fa-users"></i><span>메뉴3</span></a></li>
 				</ul>
 				<ul v-else>
-					<li><router-link to="/login"><i class="fa fa-sign-in"></i><span>로그인</span></router-link></li>
+					<li><a href="#" @click="login()"><i class="fa fa-sign-in"></i><span>로그인</span></a></li>
 				</ul>
 			</div>
 		</div>
@@ -24,12 +24,21 @@
 </template>
 <script>
 	import userData from '../models/userData';
+	import $ from 'jquery';
 
 	export default {
 		data() {
 			return {
 				isMenuOpen: false,
 				user: userData.data
+			}
+		},
+		methods: {
+			login() {
+				$.post('https://api.planet.moe/session', (data) => {
+					localStorage.setItem('session', data.sessID);
+					window.location.replace('https://api.planet.moe/auth/' + data.sessID);
+				});
 			}
 		}
 	}
