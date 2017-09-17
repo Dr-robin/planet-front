@@ -4,7 +4,7 @@ export default {
 	data: {data: {}, isLogin: false},
 	getUserData(sessID) {
 		return new Promise((success, fail) => {
-			$.get({url: 'https://api.planet.moe/user/me', headers: {Authorization: sessID}})
+			$.get({url: 'https://api.planet.moe/profile/me', headers: {Authorization: sessID}})
 			.done((data) => {
 				localStorage.setItem('session', sessID);
 				$.ajaxSetup({headers: {Authorization: sessID}});
