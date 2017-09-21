@@ -21,7 +21,7 @@ const router = new VueRouter({
 });
 
 if(localStorage.getItem('session')) {
-	user.getUserData(localStorage.getItem('session'));
+	user.getUserData(localStorage.getItem('session')).then(() => {}, () => {});
 }
 
 let vm = new Vue({router}).$mount('#vue-root');
