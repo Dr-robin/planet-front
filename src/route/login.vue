@@ -1,20 +1,28 @@
 <template>
-	<div id="panel-login" class="panel panel-default">
-		<div class="panel-heading">로그인</div>
-		<div class="panel-body">
-			<form @submit.prevent="login">
-				<div class="form-group">
-					<label for="input-email">이메일</label>
-					<input type="email" class="form-control" id="input-email" v-model="form.email" placeholder="maki@planet.moe">
-				</div>
-				<div class="form-group">
-					<label for="input-password">비밀번호</label>
-					<input type="password" class="form-control" id="input-password" v-model="form.password" placeholder="********">
-				</div>
-				<button type="submit" class="btn btn-default">로그인</button>
-			</form>
-		</div>
-	</div>
+	<md-card md-with-hover id="card-login">
+		<form @submit.prevent="login">
+			<md-card-header>
+				<div class="md-title">로그인</div>
+				<div class="md-subhead">기다리고 있었어요!</div>
+			</md-card-header>
+			<md-card-content>
+				<md-input-container>
+					<md-icon>email</md-icon>
+					<label>이메일</label>
+					<md-input type="email" v-model="form.email" required></md-input>
+				</md-input-container>
+				<md-input-container>
+					<md-icon>lock</md-icon>
+					<label>비밀번호</label>
+					<md-input type="password" v-model="form.password" required></md-input>
+				</md-input-container>
+			</md-card-content>
+			<md-card-actions>
+				<md-button>Action</md-button>
+				<md-button class="md-raised md-primary" type="submit">로그인</md-button>
+			</md-card-actions>
+		</form>
+	</md-card>
 </template>
 <script>
 import $ from 'jquery';
