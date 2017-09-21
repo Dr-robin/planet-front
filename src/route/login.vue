@@ -30,7 +30,7 @@ export default {
 	methods: {
 		login() {
 			if(this.form.email && this.form.password) {
-				user.login(this.form.email, this.form.password).then(() => {
+				user.login({email: this.form.email, password: this.form.password}).then(() => {
 					router.push('/home');
 				});
 			}

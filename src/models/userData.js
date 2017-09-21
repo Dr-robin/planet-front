@@ -1,7 +1,15 @@
 import $ from 'jquery';
 
-export default {
+let userData = {
 	data: {data: {}, isLogin: false},
+	login(ad) {
+		return new Promise((success, fail) => {
+			$.post({url: 'https://api.planet.moe/login', data: {email: ad.email, password: ad.password}})
+			.done((data) => {
+				this.getUserData(data.sessID).done(success, fail);
+			});
+		});
+	},
 	getUserData(sessID) {
 		return new Promise((success, fail) => {
 			$.get({url: 'https://api.planet.moe/profile/me', headers: {Authorization: sessID}})
@@ -21,3 +29,5 @@ export default {
 		});
 	}
 };
+
+export default userData;
