@@ -3,12 +3,8 @@
 		<md-button class="md-icon-button">
 			<md-icon>menu</md-icon>
 		</md-button>
-
 		<h2 class="md-title" style="flex: 1">플래닛</h2>
-
-		<md-button class="md-icon-button">
-			<md-icon>favorite</md-icon>
-		</md-button>
+		<router-link tag="md-button" to="/login" v-if="!user.isLogin">로그인</router-link>
 	</md-toolbar>
 </template>
 <script>
