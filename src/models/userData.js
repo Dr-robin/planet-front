@@ -6,7 +6,7 @@ let userData = {
 		return new Promise((success, fail) => {
 			$.post({url: 'https://api.planet.moe/login', data: {email: ad.email, password: ad.password}})
 			.done((data) => {
-				userData.getUserData(data.sessID).done(success, fail);
+				userData.getUserData(data.sessID).then(success, fail);
 			});
 		});
 	},
