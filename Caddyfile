@@ -10,7 +10,12 @@ planet.moe {
 	}
 }
 api.planet.moe {
-    cors
+    header / {
+        Access-Control-Allow-Origin *
+        Access-Control-Allow-Methods "GET, POST, PUT, DELETE, HEADER, OPTIONS"
+        Access-Control-Allow-Headers "Authorization"
+        -Server
+    }
     proxy / localhost:6014 {
         transparent
     }
