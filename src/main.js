@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import VueMaterial from '../theme/vue-material';
 
 import main from './route/main.vue';
 import login from './route/login.vue';
@@ -7,6 +8,7 @@ import login from './route/login.vue';
 import user from './models/userData';
 
 Vue.use(VueRouter);
+Vue.use(VueMaterial);
 require('./load-component');
 
 const router = new VueRouter({
