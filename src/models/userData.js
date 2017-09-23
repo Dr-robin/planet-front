@@ -8,15 +8,7 @@ let userData = {
 			.done((data) => {
 				userData.getUserData(data.sessID).then(success, fail);
 			}).fail((xhr) => {
-				if(xhr.status >= 400) {
-					if(xhr.responseJSON.error === 'invalid') {
-						alert('아이디나 비밀번호가 잘못되었어요.');
-					}
-					else {
-						alert('알 수 없는 오류가 발생했어요.');
-						console.log(xhr.responseJSON);
-					}
-				}
+				fail(xhr.responseJSON);
 			});
 		});
 	},
