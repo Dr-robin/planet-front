@@ -19,7 +19,10 @@
 			</md-card-content>
 			<md-card-actions>
 				<router-link tag="md-button" to="/register">회원 가입</router-link>
-				<md-button class="md-raised md-primary" type="submit">로그인</md-button>
+				<md-button class="md-raised md-primary" type="submit" :disabled="isLoading">
+					<md-spinner md-indeterminate v-if="isLoading"></md-spinner>
+					<span v-else>로그인</span>
+				</md-button>
 			</md-card-actions>
 		</form>
 	</md-card>
@@ -32,7 +35,7 @@ import router from '../main';
 export default {
 	data() {
 		return {
-			form: {}
+			form: {}, isLoading: false
 		}
 	},
 	methods: {
@@ -44,7 +47,9 @@ export default {
 					if(err.error === 'invalid') {
 						alert('아이디나 비밀번호가 맞지 않아요.');
 					}
+					this.isLoading = false;
 				});
+				this.isLoading = true;
 			}
 		}
 	}
