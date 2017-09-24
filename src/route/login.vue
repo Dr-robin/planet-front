@@ -18,7 +18,7 @@
 				</md-input-container>
 			</md-card-content>
 			<md-card-actions>
-				<md-button>Action</md-button>
+				<router-link tag="md-button" to="/register">회원 가입</router-link>
 				<md-button class="md-raised md-primary" type="submit">로그인</md-button>
 			</md-card-actions>
 		</form>
