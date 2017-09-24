@@ -3108,6 +3108,10 @@ vue-loader@^12.2.1:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.2.2"
 
+vue-recaptcha@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/vue-recaptcha/-/vue-recaptcha-0.4.0.tgz#1ad80e5ceb66b83131d3edb079221eb26fc74bf0"
+
 vue-router@^2.5.3:
   version "2.5.3"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-2.5.3.tgz#073783f564b6aece6c8a59c63e298dc2aabfb51b"
