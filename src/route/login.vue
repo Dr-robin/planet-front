@@ -40,6 +40,10 @@ export default {
 			if(this.form.email && this.form.password) {
 				user.login({email: this.form.email, password: this.form.password}).then(() => {
 					router.push('/home');
+				}, (err) => {
+					if(err.error === 'invalid') {
+						alert('아이디나 비밀번호가 맞지 않아요.');
+					}
 				});
 			}
 		}
