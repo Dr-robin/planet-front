@@ -7,7 +7,7 @@
 				<md-icon>menu</md-icon>
 			</md-button>
 		</md-toolbar>
-		<md-sidenav class="md-right" ref="sidenav">
+		<md-sidenav class="md-right md-fixed" ref="sidenav">
 			<md-list>
 				<md-list-item>
 					<md-avatar>
