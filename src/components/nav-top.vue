@@ -1,6 +1,6 @@
 <template>
 	<section>
-		<md-toolbar>
+		<md-toolbar class="hideable">
 			<h2 class="md-title" style="flex: 1">플래닛</h2>
 			<router-link tag="md-button" to="/login" v-if="!user.isLogin">로그인</router-link>
 			<md-button class="md-icon-button" v-else @click="toggleSideMenu">
@@ -17,7 +17,7 @@
 				</md-list-item>
 			</md-list>
 		</md-sidenav>
-		<md-bottom-bar>
+		<md-bottom-bar class="hideable">
 			<md-bottom-bar-item md-icon="home" md-active>활동</md-bottom-bar-item>
 			<md-bottom-bar-item md-icon="public">둘러보기</md-bottom-bar-item>
 			<md-bottom-bar-item md-icon="games">게임</md-bottom-bar-item>
@@ -28,6 +28,19 @@
 <script>
 	import userData from '../models/userData';
 	import $ from 'jquery';
+
+	let prevScroll = $(this).scrollTop();
+	$(window).scroll(function() {
+		let nowScroll = Math.min($(this).scrollTop(), $(document).height() - $(window).height());
+		if(nowScroll <= 64 || prevScroll > nowScroll + 15) {
+			$('.hideable').removeClass('hidden');
+			prevScroll = nowScroll;
+		}
+		else if(prevScroll + 15 < nowScroll) {
+			$('.hideable').addClass('hidden');
+			prevScroll = nowScroll;
+		}
+	});
 
 	export default {
 		data() {

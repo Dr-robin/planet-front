@@ -2,9 +2,25 @@
 @import (inline)'../theme/vue-material.css';
 @import (inline)'../theme/font-awesome.css';
 
+body {
+  padding-top: 64px;
+}
+.md-toolbar {
+  position: fixed;
+  width: 100%;
+  transition: top 0.4s ease;
+  top: 0;
+  &.hidden {
+    top: -64px;
+  }
+}
 .md-bottom-bar {
   position: fixed;
+  transition: bottom 0.4s ease;
   bottom: 0;
+  &.hidden {
+    bottom: -56px;
+  }
 }
 .md-button {
   &>.md-spinner {
