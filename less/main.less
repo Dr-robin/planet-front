@@ -2,54 +2,9 @@
 @import (inline)'../theme/vue-material.css';
 @import (inline)'../theme/font-awesome.css';
 
-#bar-menu {
+.md-bottom-bar {
   position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 50px;
-  background-color: #fff;
-  border-bottom: 1px solid #cccccc;
-  @media(min-width: 768px) {
-    height: 30px;
-  }
-  @media(max-width: 767px) {
-    display: none;
-  }
-  &.active {
-    display: block;
-  }
-  ul {
-    padding-left: 0;
-    margin-top: 0;
-  }
-  li {
-    list-style: none;
-    margin-right: 15px;
-    @media(min-width: 768px) {
-      float: left;
-      i {
-        display: none;
-      }
-    }
-    a {
-      padding: 10px 0;
-      display: block;
-      color: #333;
-      @media(min-width: 768px) {
-        padding: 5px 8px;
-      }
-      @media(max-width: 767px) {
-        span {
-          position: absolute;
-          left: 40px;
-        }
-      }
-      i {
-        width: 20px;
-        text-align: center;
-      }
-    }
-  }
+  bottom: 0;
 }
 .md-button {
   &>.md-spinner {

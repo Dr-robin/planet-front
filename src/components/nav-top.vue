@@ -17,6 +17,12 @@
 				</md-list-item>
 			</md-list>
 		</md-sidenav>
+		<md-bottom-bar>
+			<md-bottom-bar-item md-icon="home" md-active>활동</md-bottom-bar-item>
+			<md-bottom-bar-item md-icon="public">둘러보기</md-bottom-bar-item>
+			<md-bottom-bar-item md-icon="games">게임</md-bottom-bar-item>
+			<md-bottom-bar-item md-icon="more">더보기</md-bottom-bar-item>
+		</md-bottom-bar>
 	</section>
 </template>
 <script>
